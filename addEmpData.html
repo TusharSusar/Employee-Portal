@@ -1,0 +1,535 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f8ff;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 70px;
+            text-align: center;
+            color: #fff;
+            background-color: #181C14;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+
+        .heading {
+            margin-top: 14px;
+        }
+
+        .container {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            margin: 100px 0;
+            padding: 20px 30px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border-radius: 8px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+       
+        .personal-detail {
+            display: flex;
+            flex-direction: column;        
+            border: 1px solid #cccccc;
+            padding: 15px;
+            margin: 16px 0;
+        }
+
+        .name-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .name {
+            display: flex;
+            flex-direction: column;
+            margin-right: 3rem;
+        }
+
+        label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color:#4d4d4d;
+        }
+        
+        input {
+            font-size: 1rem;
+            margin: 10px 0;
+            padding: 10px 1rem;
+            /* border-radius: 5px; */
+            border: 1px solid #cccccc;
+            outline: none;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 2rem;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            color: #fff;
+            background: #111111;
+            cursor: pointer;
+        }
+
+        h2 {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="heading">Swiftship User portal</h1>
+    </div>
+    <div class="container">
+        <h2>Personal Details</h2>
+        <div class="personal-detail">
+            <div class="name-container">
+                <div class="name">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname"/>
+                </div>
+                <div class="name">
+                    <label for="Mname">Middle Name</label>
+                    <input type="text" id="Mname"/>
+                </div>
+                <div class="name">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname"/>
+                </div>
+            </div>
+            <label for="age">Age</label>
+            <input type="number" id="age"/>
+            <label for="email">Email</label>
+            <input type="email" id="email"/>
+            <label for="mobile-number">Mobile number</label>
+            <input type="number" id="mobile-number"/>
+        </div>
+        <h2>Work Details</h2>
+        <label for="position">Position</label>
+        <input type="text" id="position"/>
+        <label for="department">Department</label>
+        <input type="text" id="department"/>
+        <label for="salery">Salery</label>
+        <input type="number" id="salery"/>
+
+        <button type="submit" class="submitbtn">Submit</button>
+    </div>
+    
+
+    <script>
+        const submitbtn = document.querySelector('.submitbtn')
+        
+        const genrateID = () => {
+            let Number = '123456789';
+            let empid = ''
+
+            for(let i=0;i<=9; i++) {
+                randNo = Math.floor(Math.random() * Number.length)
+                empid = empid + randNo;
+            }
+            // console.log(empid);
+            return empid
+        }
+
+
+        let employees = [];
+
+        const addData = () => {
+            const fname = document.querySelector('#fname').value
+            const mname = document.querySelector('#Mname').value
+            const lname = document.querySelector('#lname').value
+            const age = document.querySelector('#age').value
+            const mobno = document.querySelector('#mobile-number').value
+            const email = document.querySelector('#email').value
+
+            let empid = genrateID().trim();
+
+            const employee = {
+                id : empid,
+                firstName : fname,
+                MiddleName: mname,
+                LastName: lname,
+                Age : age,
+                MobileNo : mobno,
+                email : email,
+            };
+
+            employees.push(employee)
+
+            localStorage.setItem('Employees', JSON.stringify(employees));
+
+            console.log(employees);
+        }
+
+        submitbtn.addEventListener('click', addData);
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f8ff;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 70px;
+            text-align: center;
+            color: #fff;
+            background-color: #181C14;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+        }
+
+        .heading {
+            margin-top: 14px;
+        }
+
+        .container {
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            margin: 100px 0;
+            padding: 20px 30px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border-radius: 8px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+       
+        .personal-detail {
+            display: flex;
+            flex-direction: column;        
+            border: 1px solid #cccccc;
+            padding: 15px;
+            margin: 16px 0;
+        }
+
+        .name-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .name {
+            display: flex;
+            flex-direction: column;
+            margin-right: 3rem;
+        }
+
+        label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color:#4d4d4d;
+        }
+        
+        input {
+            font-size: 1rem;
+            margin: 10px 0;
+            padding: 10px 1rem;
+            /* border-radius: 5px; */
+            border: 1px solid #cccccc;
+            outline: none;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 2rem;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            color: #fff;
+            background: #111111;
+            cursor: pointer;
+        }
+
+        h2 {
+            margin: 15px 0;
+        }
+
+        .dataContainer {
+            width: 90%;
+            min-height: 200px;
+            height: auto;
+            margin: 0 auto 20px;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            margin: 0 auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            /* border-collapse: collapse; */
+        }
+
+        th {
+            padding: 10px;
+            color: #fff;
+            background-color: blue;
+        }
+        
+        td {
+            padding: 1rem;
+            color: #000;
+            border-radius: 5px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="heading">Swiftship User portal</h1>
+    </div>
+    <div class="container">
+        <h2>Personal Details</h2>
+        <div class="personal-detail">
+            <div class="name-container">
+                <div class="name">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname"/>
+                </div>
+                <div class="name">
+                    <label for="Mname">Middle Name</label>
+                    <input type="text" id="Mname"/>
+                </div>
+                <div class="name">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname"/>
+                </div>
+            </div>
+            <label for="age">Age</label>
+            <input type="number" id="age"/>
+            <label for="email">Email</label>
+            <input type="email" id="email"/>
+            <label for="mobile-number">Mobile number</label>
+            <input type="number" id="mobile-number"/>
+        </div>
+        <h2>Work Details</h2>
+        <label for="position">Position</label>
+        <input type="text" id="position"/>
+        <label for="department">Department</label>
+        <input type="text" id="department"/>
+        <label for="salery">Salery</label>
+        <input type="number" id="salery"/>
+
+        <button type="submit" class="submitbtn">Submit</button>
+    </div>
+
+    <div class="dataContainer">
+        <div class="inputContainer">
+            <label for="fetchid">Enter Name of Employee</label>
+            <input type="text" id="fetchid"/>
+            <button type="submit" id="fetchbtn">Search</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Employee Position</th>
+                    <th>Employee Department</th>
+                    <th>Employee Age</th>
+                    <th>Employee Salary</th>
+                </tr>
+            </thead>
+            <tbody id="databody">
+                <!-- Data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+    
+
+    <script>
+        const submitbtn = document.querySelector('.submitbtn');
+        const searchbtn = document.querySelector('#fetchbtn')
+        
+        const genrateID = () => {
+            let Number = '123456789';
+            let empid = ''
+
+            for(let i=0;i<=9; i++) {
+                randNo = Math.floor(Math.random() * Number.length)
+                empid = empid + randNo;
+            }
+            // console.log(empid);
+            return empid
+        }
+
+
+        let employees = [];
+
+        const addData = () => {
+            const fname = document.querySelector('#fname').value
+            const mname = document.querySelector('#Mname').value
+            const lname = document.querySelector('#lname').value
+            const age = document.querySelector('#age').value
+            const mobno = document.querySelector('#mobile-number').value
+            const email = document.querySelector('#email').value
+
+            let empid = genrateID().trim();
+
+            const employee = {
+                id : empid,
+                firstName : fname,
+                MiddleName: mname,
+                LastName: lname,
+                Age : age,
+                MobileNo : mobno,
+                email : email,
+            };
+
+            employees.push(employee)
+
+            localStorage.setItem('Employees', JSON.stringify(employees));
+
+            console.log(employees);
+        }
+
+        // const getData = () => {
+        //     const searchInput = document.getElementById('fetchid').value.trim();
+        //     console.log("Search Input:", searchInput);
+            
+
+        //     let data = JSON.parse(localStorage.getItem('Employees')) || [];
+        //     console.log(data);
+
+
+        //     // Ensure data is an array
+        //     if (!Array.isArray(employees)) {
+        //         console.warn("Fixing localStorage Employees data format...");
+        //         employees = Object.values(employees); // Convert object to array if necessary
+        //     }
+
+        //     console.log("Stored Employees:", employees);
+
+        //     // Find employee with the matching ID
+        //     let foundEmployee = employees.find(employee => employee.id === searchInput);
+
+        //     if (foundEmployee) {
+        //         const tr = document.createElement('tr');
+
+        //         databody.innerHTML = `<tr><td>${data.id}</td>
+        //                                   <td>${data.name}</td>
+        //                                   <td>${data.position}</td>
+        //                                   <td>${data.department}</td>
+        //                                   <td>${data.age}</td>
+        //                                   <td>${data.salery}</td>
+        //                               </tr>`
+        //     }
+
+        //     else {
+        //         alert('Name not found');
+        //         console.log(data.name);
+        //     }            
+        // }
+
+        const getData = () => {
+            const searchInput = document.getElementById('fetchid').value.trim(); // Get user input
+            console.log("Search Input:", searchInput);
+
+            // Retrieve the Employees array from localStorage
+            let employees = JSON.parse(localStorage.getItem('Employees')) || [];
+
+            // Ensure that employees is an array
+            if (!Array.isArray(employees)) {
+                console.warn("Fixing Employees data format...");
+                employees = Object.values(employees);
+            }
+
+            console.log("Stored Employees:", employees);
+
+            // Find the employee object with matching ID
+            let foundEmployee = employees.find(employee => employee.id === searchInput);
+
+            if (foundEmployee) {
+                // Get the table body where we will display the data
+                const databody = document.getElementById('databody');
+
+                // Display employee details inside the table
+                databody.innerHTML = `<tr>
+                                        <td>${foundEmployee.id}</td>
+                                        <td>${foundEmployee.firstName}</td>
+                                        <td>${foundEmployee.position}</td>
+                                        <td>${foundEmployee.department}</td>
+                                        <td>${foundEmployee.Age}</td>
+                                        <td>${foundEmployee.email}</td>
+                                    </tr>`;
+                console.log("Employee Found:", foundEmployee);
+            } else {
+                alert('Employee ID not found');
+                console.log("No matching employee found.");
+            }
+        };
+
+
+
+        submitbtn.addEventListener('click', addData);
+        searchbtn.addEventListener('click', getData);
+    </script>
+</body>
+</html>
