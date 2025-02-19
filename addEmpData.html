@@ -450,44 +450,6 @@
             console.log(employees);
         }
 
-        // const getData = () => {
-        //     const searchInput = document.getElementById('fetchid').value.trim();
-        //     console.log("Search Input:", searchInput);
-            
-
-        //     let data = JSON.parse(localStorage.getItem('Employees')) || [];
-        //     console.log(data);
-
-
-        //     // Ensure data is an array
-        //     if (!Array.isArray(employees)) {
-        //         console.warn("Fixing localStorage Employees data format...");
-        //         employees = Object.values(employees); // Convert object to array if necessary
-        //     }
-
-        //     console.log("Stored Employees:", employees);
-
-        //     // Find employee with the matching ID
-        //     let foundEmployee = employees.find(employee => employee.id === searchInput);
-
-        //     if (foundEmployee) {
-        //         const tr = document.createElement('tr');
-
-        //         databody.innerHTML = `<tr><td>${data.id}</td>
-        //                                   <td>${data.name}</td>
-        //                                   <td>${data.position}</td>
-        //                                   <td>${data.department}</td>
-        //                                   <td>${data.age}</td>
-        //                                   <td>${data.salery}</td>
-        //                               </tr>`
-        //     }
-
-        //     else {
-        //         alert('Name not found');
-        //         console.log(data.name);
-        //     }            
-        // }
-
         const getData = () => {
             const searchInput = document.getElementById('fetchid').value.trim(); // Get user input
             console.log("Search Input:", searchInput);
