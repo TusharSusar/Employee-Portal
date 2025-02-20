@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f8ff;
+}
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  color: #fff;
+  background-color: #181c14;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.heading {
+  margin-top: 14px;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 200px;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.btn-container {
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  padding: 10px 2rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  background: #111111;
+  cursor: pointer;
+}
+
+#employeebtn {
+  color: #111111;
+  border: 1px solid #111111;
+  background-color: #fff;
+}
+
+label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+input {
+  font-size: 1rem;
+  margin: 10px 0;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 80%);
+  outline: none;
+}
+
+/* Hide number input arrows in Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.submitbtn {
+  margin-top: 20px;
+}
+
+.manager-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.manager-input.hide {
+  display: none;
+}
+
+.employee-input {
+  display: none;
+}
+
+.employee-input.show {
+  display: block;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
