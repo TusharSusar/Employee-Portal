@@ -120,16 +120,70 @@ hr {
 
 .search-section {
   height: 300px;
-  background-color: blue;
+  background-color: #fff;
+}
+
+.inputcontainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 30px;
 }
 
 .filters {
+  width: 100%;
   display: flex;
+  text-align: center;
 }
 
 .filter {
-  padding: 12px 30px;
-  border: 1px solid black;
+  width: 100%;
+  padding: 16px 30px;
+}
+
+.byname {
+  background-color: #f2f2f2;
+}
+
+label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+input {
+  font-size: 1rem;
+  margin: 16px 0;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 80%);
+  outline: none;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 12px 2rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  background: #111111;
+  cursor: pointer;
+}
+
+.idSearch {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameSearch {
+  display: none;
+}
+
+.nameSearch.show {
+  display: flex;
+  flex-direction: column;
 }
 
 .add-emp {

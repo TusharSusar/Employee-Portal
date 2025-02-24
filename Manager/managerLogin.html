@@ -72,15 +72,22 @@
     <main class="manager-body">
         <div class="dashboard mb-section"></div>
         <div class="search-section mb-section" id="search">
-            <strong>Search By</strong>
+            <!-- <strong>Search By</strong> -->
             <div class="filters">
                 <div class="byid filter">By EMP_ID</div>
-                <div class="byposition filter">By Position</div>
+                <div class="byname filter">By Name</div>
             </div>
 
             <div class="inputcontainer">
-                <input type="text" id="searchInput"/>
-                <button type="submit" id="searchbtn">Search</button>
+                <div class="idSearch">
+                    <label for="searchInputid">Enter ID</label>
+                    <input type="text" id="searchInputid"/>
+                </div>
+                <div class="nameSearch">
+                    <label for="searchInputname">Enter Name</label>
+                    <input type="text" id="searchInputname"/>
+                </div>
+                <button type="submit" id="searchbtn" class="btn">Search</button>
             </div>
         </div>
         <div class="add-emp mb-section"></div>
@@ -88,10 +95,6 @@
         <div class="delete-emp mb-section"></div>
     </main>
 
-    <script>
-        function scrollToSection() {
-            document.getElementById("search").scrollIntoView({ behavior: "smooth" });
-        }
-    </script>
+    <script src="mangscript.js"></script>
 </body>
 </html>
